@@ -1,41 +1,34 @@
-/**
- * php 获取批量上传图片数据
- * @param array $files
- * @return array
- * 例子：
- * Array(
+php 获取批量上传图片数据
+例子：
+Array(
     [name] => Array
     (
         [0] => facepalm.jpg
         [1] =>
     )
-
     [type] => Array
     (
         [0] => image/jpeg
         [1] =>
     )
-
     [tmp_name] => Array
     (
         [0] => /tmp/phpn3FmFr
         [1] =>
     )
-
     [error] => Array
     (
         [0] => 0
         [1] => 4
     )
-
     [size] => Array
     (
         [0] => 15476
         [1] => 0
     )
 )
- * 结果：
- * Array(
+结果：
+Array(
     [0] => Array
     (
         [name] => facepalm.jpg
@@ -44,7 +37,6 @@
         [error] => 0
         [size] => 15476
     )
-
     [1] => Array
     (
         [name] =>
@@ -54,9 +46,8 @@
         [size] =>
     )
 )
- */
-function normalize_files_array($files = []) {
 
+function normalize_files_array($files = []) {
     $normalized_array = [];
     foreach($files as $index => $file) {
         foreach($files[$index] as $idx => $name) {
@@ -68,6 +59,5 @@ function normalize_files_array($files = []) {
         }
 
     }
-
     return $normalized_array;
 }
